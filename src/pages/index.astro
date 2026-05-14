@@ -1,0 +1,116 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const allEssays = await getCollection('essays', ({ data }) => !data.draft);
+const sortedEssays = allEssays.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+function formatDate(d: Date) {
+  return d.toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' });
+}
+---
+<Base>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-eyebrow">
+      <span class="pulse"></span>
+      <span>Lisbon · writing in public · since 2024</span>
+    </div>
+
+    <h1>A synthesizer of ideas for the <em>agent‑economy</em><span class="cursor"></span></h1>
+
+    <p class="hero-lede">Notes on technology, institutions, and what we're optimising for beneath the strategy.</p>
+
+    <a href="#essays" class="hero-cta">Read the latest essay <span class="arrow">→</span></a>
+
+    <div class="hero-status">
+      <span class="item"><span class="label">Currently</span><span class="val live">Writing weekly</span></span>
+      <span class="item"><span class="label">Day job</span><span class="val">Fidelidade · operational transformation</span></span>
+      <span class="item"><span class="label">Building</span><span class="val">IndieBacked · agentic systems in public</span></span>
+    </div>
+  </section>
+
+  <!-- ESSAYS -->
+  <section class="s" id="essays">
+    <div class="wrap">
+      <div class="s-eyebrow">Essays · most recent</div>
+
+      <div class="essays-list">
+        {sortedEssays.map((essay) => (
+          <a href={`/essays/${essay.slug}/`} class="essay-row">
+            <span class="er-date">{formatDate(essay.data.pubDate)}</span>
+            <div class="er-body">
+              <div class="er-title" set:html={essay.data.title} />
+              <div class="er-desc">{essay.data.description}</div>
+              {essay.data.tags.length > 0 && (
+                <div class="er-tags">
+                  {essay.data.tags.map((tag) => <span>{tag}</span>)}
+                </div>
+              )}
+            </div>
+            <div class="er-meta">{essay.data.readingTime ?? '—'}</div>
+          </a>
+        ))}
+      </div>
+
+      <p class="essays-foot">
+        {sortedEssays.length} essays so far. <a href="/">More as they ship</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- ABOUT preview -->
+  <section class="s">
+    <div class="wrap">
+      <div class="about-block">
+        <div class="about-l">
+          <div class="s-eyebrow">About</div>
+        </div>
+        <div class="about-r">
+          <p>I'm a Portuguese strategist and writer working at the intersection of <em>technology, institutions, and narrative</em>. What I'm trying to do, with everything I write and ship, is translate complex systems into narratives that shape how decisions get made.</p>
+          <p>By day I work on operational transformation at <em>Fidelidade</em>, Portugal's largest insurer. By night I write essays and build the agentic systems I write about. The day job is where the writing earns its credibility on institutions and operations. The essays are where the argument gets sharpened.</p>
+          <p>The longer arc is institutional. The route there goes through writing first, advising second, institutional work third. I'm in phase one. <a href="/about">More on how I got here</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="s" id="newsletter">
+    <div class="wrap">
+      <div class="nl-block">
+        <div class="nl-l">
+          <div class="s-eyebrow">Newsletter</div>
+        </div>
+        <div class="nl-r">
+          <div class="nl-title">Mental Models for the Agent‑Economy</div>
+          <p class="nl-desc">Weekly. The framework I'm thinking with, the artifact I shipped this week, and the named tradeoff between them. No motivational filler, no predict without ship.</p>
+
+          <div class="nl-each">
+            <div class="line"><span class="num">01</span><span>One framework · a mental model from this week's reading or work.</span></div>
+            <div class="line"><span class="num">02</span><span>One artifact · a skill, prompt, template, or system you can use.</span></div>
+            <div class="line"><span class="num">03</span><span>One tradeoff · the cost of the framework, named honestly.</span></div>
+          </div>
+
+          {/* Replace YOURSUBSTACK with your Substack subdomain when you set it up */}
+          <iframe
+            src="https://YOURSUBSTACK.substack.com/embed"
+            width="480"
+            height="150"
+            style="border:0.5px solid var(--warm-5); border-radius:6px; background:var(--paper-card); max-width:100%;"
+            frameborder="0"
+            scrolling="no"
+            title="Subscribe to Mental Models for the Agent-Economy"
+          ></iframe>
+
+          <div class="nl-foot">
+            <span class="ico"></span>
+            <span>Hosted on Substack · 1-click unsubscribe</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>

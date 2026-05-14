@@ -1,0 +1,84 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const essays = await getCollection('essays', ({ data }) => !data.draft);
+  return essays.map((essay) => ({
+    params: { slug: essay.slug },
+    props: { essay, essays },
+  }));
+}
+
+const { essay, essays } = Astro.props;
+const { Content } = await render(essay);
+
+// strip HTML tags from title for the page <title>
+const plainTitle = essay.data.title.replace(/<[^>]+>/g, '');
+
+// build prev/next navigation
+const sorted = essays.sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+const idx = sorted.findIndex((e) => e.slug === essay.slug);
+const newer = idx > 0 ? sorted[idx - 1] : null;
+const older = idx < sorted.length - 1 ? sorted[idx + 1] : null;
+
+function formatDate(d: Date) {
+  return d.toLocaleDateString('en-GB', { month: 'long', year: 'numeric' });
+}
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: plainTitle,
+  description: essay.data.description,
+  author: { '@type': 'Person', name: 'Bernardo Faro', url: 'https://bernardofaro.com' },
+  datePublished: essay.data.pubDate.toISOString(),
+  publisher: { '@type': 'Person', name: 'Bernardo Faro' },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': new URL(`/essays/${essay.slug}/`, Astro.site).toString() },
+  keywords: essay.data.tags.join(', '),
+};
+---
+<Base
+  title={plainTitle}
+  description={essay.data.description}
+  pageType="article"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} slot="head" />
+
+  <article class="essay-reader">
+    <a href="/" class="er-back">← Essays</a>
+
+    <header class="post-header">
+      <div class="post-header-meta">
+        <span>{formatDate(essay.data.pubDate)}</span>
+        {essay.data.readingTime && <><span class="sep">·</span><span>{essay.data.readingTime}</span></>}
+        {essay.data.status === 'evergreen' && <><span class="sep">·</span><span class="ev">evergreen</span></>}
+        {essay.data.tags.map((tag) => <span class="tag">{tag}</span>)}
+      </div>
+      <h1 class="post-header-title" set:html={essay.data.title} />
+    </header>
+
+    <div class="prose">
+      <Content />
+    </div>
+
+    {(newer || older) && (
+      <nav class="essay-nav">
+        {older ? (
+          <a href={`/essays/${older.slug}/`}>
+            ← Older
+            <span class="nav-title" set:html={older.data.title} />
+          </a>
+        ) : <span></span>}
+        {newer ? (
+          <a href={`/essays/${newer.slug}/`} class="next">
+            Newer →
+            <span class="nav-title" set:html={newer.data.title} />
+          </a>
+        ) : <span></span>}
+      </nav>
+    )}
+  </article>
+</Base>
