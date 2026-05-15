@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 500" width="1500" height="500">
+  <!-- background -->
+  <rect width="1500" height="500" fill="#fcfaf6"/>
+
+  <!-- subtle grid -->
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#14110d" stroke-width="0.5" opacity="0.03"/>
+    </pattern>
+  </defs>
+  <rect width="1500" height="500" fill="url(#grid)"/>
+
+  <!-- Substack: newsletter-specific framing, subscription positioning -->
+
+  <!-- eyebrow -->
+  <g transform="translate(110, 110)">
+    <rect x="0" y="-10" width="10" height="10" fill="#1a8554"/>
+    <text x="22" y="0" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="15" letter-spacing="2.6" fill="#6e6553">NEWSLETTER · WEEKLY · LISBON</text>
+  </g>
+
+  <!-- newsletter title -->
+  <text x="110" y="220" font-family="Fraunces, Georgia, serif" font-size="58" font-weight="320" font-style="italic" letter-spacing="-1.2" fill="#14110d">Mental Models</text>
+  <text x="110" y="285" font-family="Fraunces, Georgia, serif" font-size="58" font-weight="320" font-style="italic" letter-spacing="-1.2" fill="#14110d">for the Agent-Economy.</text>
+
+  <!-- tagline -->
+  <text x="110" y="345" font-family="'Inter Tight', sans-serif" font-size="19" fill="#3d362d">One framework, one shipped artifact, one named tradeoff. Weekly.</text>
+
+  <!-- right-side wordmark -->
+  <g transform="translate(1380, 110)">
+    <text x="0" y="0" text-anchor="end" font-family="'Inter Tight', sans-serif" font-size="22" font-weight="500" letter-spacing="-0.66" fill="#14110d">Bernardo Faro</text>
+    <rect x="3" y="-10" width="8" height="8" fill="#1a8554"/>
+  </g>
+  <text x="1380" y="138" text-anchor="end" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11" letter-spacing="1.8" fill="#a09680">BERNARDOFARO.COM</text>
+</svg>

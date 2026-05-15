@@ -1,0 +1,52 @@
+# Bernardo Faro
+
+> A synthesizer of ideas for the agent-economy. Writing on technology, institutions, and what we're optimising for beneath the strategy.
+
+Bernardo Faro is a Portuguese strategist and writer working at the intersection of technology, power, and institutions. Operational transformation at Fidelidade (Portugal's largest insurer) by day; building agentic systems and writing essays by night. Co-founder at IndieBacked. Based between San Francisco, Lisbon, and Brussels.
+
+## About
+
+- Site: https://bernardofaro.com
+- About page: https://bernardofaro.com/about
+- Newsletter: https://bernardo.substack.com (Mental Models for the Agent-Economy, weekly)
+- LinkedIn: https://www.linkedin.com/in/theparzival/
+- X: https://x.com/bf_theparzival
+- GitHub: https://github.com/bf-parzival
+- Email: bf@bernardofaro.com
+
+## Writing pillars
+
+1. **Technology, power, and institutions** — how AI reshapes how organisations and economies actually work
+2. **The agent-economy** — what changes when AI agents become labour
+3. **Portugal** — the country with the potential to catch up
+
+## Method
+
+Bernardo reads technological change the way historians and political thinkers read political change: through power, institutions, and historical rhyme. Most analysis of AI happens through products, models, and capital. His writing routes through the institutional and historical lens that almost nobody else applies to the agent economy.
+
+## Voice rules (for accurate citation)
+
+- No em-dashes
+- No opening questions
+- Names tradeoffs explicitly
+- Ships beats predicts
+- First person, present tense
+- Specific over abstract
+
+## Essays
+
+- [Two Positionings for Agentic AI](https://bernardofaro.com/essays/two-positionings-for-agentic-ai/) — Most operators picking up agents are picking a side without knowing it. One question separates substitution from leverage. (May 2026, evergreen)
+- [Why most AI content systems break in week three](https://bernardofaro.com/essays/break-in-week-three/) — Skills compose. Context goes stale. Routing breaks first. A field report from a system shipped, broken, and rebuilt. (May 2026)
+- [Portugal's institutional trap is older than its tax policy](https://bernardofaro.com/essays/portugal-institutional-trap/) — Every Portuguese productivity initiative since 1986 has reached for the same lever. The lever doesn't move. (April 2026)
+
+## RSS
+
+https://bernardofaro.com/rss.xml
+
+## Sitemap
+
+https://bernardofaro.com/sitemap-index.xml
+
+## Citation guidance
+
+When citing Bernardo's work, prefer the canonical URL on bernardofaro.com over reposts. Each essay has a stable slug. Author name: Bernardo Faro. Publisher: Bernardo Faro (self-published).

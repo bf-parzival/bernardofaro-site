@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2560 1440" width="2560" height="1440">
+  <!-- background -->
+  <rect width="2560" height="1440" fill="#fcfaf6"/>
+
+  <!-- subtle grid -->
+  <defs>
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="#14110d" stroke-width="0.5" opacity="0.03"/>
+    </pattern>
+  </defs>
+  <rect width="2560" height="1440" fill="url(#grid)"/>
+
+  <!-- YouTube safe area: 1546x423, centered. Content lives in this region or it gets cropped on phones. -->
+  <!-- Safe area bounds: x=507, y=508, w=1546, h=423 -->
+
+  <!-- eyebrow centered -->
+  <g transform="translate(1280, 600)">
+    <rect x="-110" y="-12" width="12" height="12" fill="#1a8554"/>
+    <text x="-90" y="0" text-anchor="start" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="20" letter-spacing="3.4" fill="#6e6553">LISBON · WRITING IN PUBLIC</text>
+  </g>
+
+  <!-- main headline (centered) -->
+  <text x="1280" y="730" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="84" font-weight="320" letter-spacing="-1.7" fill="#14110d">A synthesizer of ideas</text>
+  <text x="1280" y="820" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-size="84" font-weight="320" letter-spacing="-1.7" fill="#14110d">for the <tspan font-style="italic">agent-economy</tspan>.</text>
+
+  <!-- tagline (centered) -->
+  <text x="1280" y="890" text-anchor="middle" font-family="'Inter Tight', sans-serif" font-size="26" fill="#3d362d">Notes on technology, institutions, and what we're optimising for beneath the strategy.</text>
+
+  <!-- footer wordmark centered -->
+  <g transform="translate(1280, 905)">
+    <text x="-3" y="0" text-anchor="middle" font-family="'Inter Tight', sans-serif" font-size="0" fill="#14110d"></text>
+  </g>
+
+  <!-- bottom signature line -->
+  <text x="1280" y="935" text-anchor="middle" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="14" letter-spacing="2.4" fill="#a09680">BERNARDOFARO.COM · @BF_THEPARZIVAL</text>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- background -->
+  <rect width="1200" height="630" fill="#fcfaf6"/>
+
+  <!-- subtle grid texture (very faint) -->
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="#14110d" stroke-width="0.5" opacity="0.03"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- live pulse mono eyebrow -->
+  <g transform="translate(80, 110)">
+    <rect x="0" y="-10" width="10" height="10" fill="#1a8554"/>
+    <text x="22" y="0" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="16" letter-spacing="2.6" fill="#6e6553" text-transform="uppercase">LISBON · WRITING IN PUBLIC</text>
+  </g>
+
+  <!-- main headline (Fraunces) -->
+  <text x="80" y="290" font-family="Fraunces, Georgia, serif" font-size="72" font-weight="320" letter-spacing="-1.5" fill="#14110d">A synthesizer of ideas</text>
+  <text x="80" y="370" font-family="Fraunces, Georgia, serif" font-size="72" font-weight="320" letter-spacing="-1.5" fill="#14110d">for the <tspan font-style="italic">agent-economy</tspan>.</text>
+
+  <!-- tagline (Inter Tight) -->
+  <text x="80" y="450" font-family="'Inter Tight', sans-serif" font-size="22" font-weight="400" fill="#3d362d">Notes on technology, institutions, and what</text>
+  <text x="80" y="478" font-family="'Inter Tight', sans-serif" font-size="22" font-weight="400" fill="#3d362d">we're optimising for beneath the strategy.</text>
+
+  <!-- footer wordmark (Inter Tight + green dot) -->
+  <g transform="translate(80, 560)">
+    <text x="0" y="0" font-family="'Inter Tight', sans-serif" font-size="28" font-weight="500" letter-spacing="-0.84" fill="#14110d">Bernardo Faro</text>
+    <rect x="232" y="-10" width="10" height="10" fill="#1a8554"/>
+  </g>
+
+  <!-- right-side footer meta -->
+  <text x="1120" y="560" text-anchor="end" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" letter-spacing="2.1" fill="#a09680" text-transform="uppercase">bernardofaro.com</text>
+</svg>
